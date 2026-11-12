@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tennis-career"
+authors = [
+    { name = "Jennifer Huang", email = "jenhuang@berkeley.edu" },
+]
+description = "Retrieve Tennis Abstract career match data for given players & plot their results against opponents' age differences."
+readme = "README.md"
+
+requires-python = ">=3.10"
+dependencies = [
+	"pandas>=3.1.1",
+	"matplotlib>=3.11.2"
+]
+
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+keywords = ["tennis", "data-analysis", "visualization"]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/UCB-stat159-f26/hw03-3-huang-jen"
+Issues = "https://github.com/UCB-stat159-f26/hw03-3-huang-jen/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "tennis_career.__version__"}

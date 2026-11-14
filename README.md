@@ -32,7 +32,7 @@ hw03-3-huang-jen/
     └── rafael_nadal_career.png
 ```
 
-Local environments and caches are included. Example generated output plots and cleaned CSVs are included for reference.
+Local environments and caches are excluded. Example generated output plots and cleaned CSVs are included for reference.
 
 ## Development setup
 
@@ -123,7 +123,7 @@ The package code is released under the terms of the BSD 3-Clause License.
 
 ## Personal Reflections
 
-Through this project, I learned that retrieving data requires more than finding a URL and reading a file sometimes. For TA data, female historical files store opponents’ birth dates, while male historical files provide their ages directly, so my package needed to handle both formats. During validation, I also found that Nadal’s regular and historical JS files omitted matches from all years after 2016, so I used the TA URL first instead of just the PlayerNameCareer.js all the time. This helped me understand how checking whether a request succeeds is different from checking whether it returns actually complete and quality data.
+Through this project, I learned that retrieving data requires more than finding a URL and reading a file sometimes. For TA data, female historical files store opponents’ birth dates, while male historical files provide their ages directly, so my package needed to handle both formats. During validation, I also found that Nadal’s combined regular and historical JS files stopped in August 2018, while the player profile included matches through November 2024, so I used the TA URL first instead of just the PlayerNameCareer.js all the time. This helped me understand how checking whether a request succeeds is different from checking whether it returns actually complete and quality data.
 
 I also tested a few different examples and found that TA will use different or unexpected naming conventions, such as JohnMcenroeCareer.js (the narrator from one of my favorite shows, "Never Have I Ever") rather than John McEnroe, which helped inform my data cleaning and retrieval function as well.
 

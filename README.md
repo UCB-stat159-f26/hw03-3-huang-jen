@@ -120,3 +120,13 @@ python -m pip install git+https://github.com/UCB-stat159-f26/hw03-3-huang-jen.gi
 ## License
 
 The package code is released under the terms of the BSD 3-Clause License.
+
+## Personal Reflections
+
+Through this project, I learned that retrieving data requires more than finding a URL and reading a file sometimes. For TA data, female historical files store opponents’ birth dates, while male historical files provide their ages directly, so my package needed to handle both formats. During validation, I also found that Nadal’s regular and historical JS files omitted matches from all years after 2016, so I used the TA URL first instead of just the PlayerNameCareer.js all the time. This helped me understand how checking whether a request succeeds is different from checking whether it returns actually complete and quality data.
+
+I also tested a few different examples and found that TA will use different or unexpected naming conventions, such as JohnMcenroeCareer.js (the narrator from one of my favorite shows, "Never Have I Ever") rather than John McEnroe, which helped inform my data cleaning and retrieval function as well.
+
+Furthermore, in HW02, my scripts focused on only on Serena Williams and saved specific outputs. For HW03, I had to make this workflow reusable for different players, through separating the retrieval and cleaning of data from plotting, and returning a DataFrame/plot object instead of automatically saving everything. This gives anyone using my package more control, and solidified my understanding of how a package differs from a collection of scripts. Working on these with small functions < 20 lines also gave me better control and development of my code, even if sometimes it was a bit frustrating to have to split functions up just to meet the length requirement maxes.
+
+Lastly, to validate my package as an external user, I installed the repository directly from GitHub into a fresh temporary environment, following the workflow described in the instructions on how we will be graded. I checked the import location to confirm that Python was using the newly installed package rather than my editable local copy. All of my automated tests passed, and my live checks retrieved Williams' and Nadal's matches and saved their CSVs and plots. These checks gave me stronger reassurance that my dependencies, package structure, and public functions work together outside my local setup. This also helped me distinguish my offline tests from live checks, again making sure I meet this requirement.

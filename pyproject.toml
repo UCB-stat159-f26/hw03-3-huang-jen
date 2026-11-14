@@ -36,3 +36,10 @@ where = ["src"]
 
 [tool.setuptools.dynamic]
 version = {attr = "tennis_career.__version__"}
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
